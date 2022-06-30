@@ -23,8 +23,8 @@ To apply the concepts learned in the <a href="https://github.com/tofolo17/python
 were remade two classic games using Pygame. a cross-platform
 set of Python modules designed for writing video games. There are:
 
-1. Snake Game: straight to the point;
-2. Pong game: with a simple interface, multiplayer (local), and singleplayer mode.
+1. Snake: straight to the point;
+2. Pong: with a simple interface, multiplayer (local), and singleplayer mode.
 
 The content used was, in its majority, the own <a href="https://www.pygame.org/docs/">documentation</a> of the tool,
 besides Q&A on StackOverflow.
