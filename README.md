@@ -1,5 +1,3 @@
-# Pygame Studies
-
 ## O que você encontrará neste repositório?
 
 <p>
