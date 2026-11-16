@@ -1,3 +1,6 @@
+"""Snake: coma as maçãs, cresça e não morda a própria cauda."""
+
+import sys
 from random import randint
 
 import pygame
@@ -19,11 +22,14 @@ clock = pygame.time.Clock()
 
 # Functions
 def score(snake_blocks):
-    points = pygame.font.SysFont("Times New Roman", 15).render(str(snake_blocks), True, white)
+    points = pygame.font.SysFont("Times New Roman", 15).render(
+        str(snake_blocks), True, white
+    )
     screen.blit(points, [int(10), int(10)])
 
 
 def on_grid_random():
+    # Posição aleatória alinhada à grade de 10 px
     x = randint(10, 390)
     return x // 10 * 10
 
@@ -32,7 +38,9 @@ def snake_builder(xy_snake, h=0):
     for xy in xy_snake:
         pygame.draw.rect(screen, white, [xy[0], xy[1], 10, 10])
     if h:
-        return pygame.draw.rect(screen, white, [xy_snake[-1][0], xy_snake[-1][1], 10, 10])
+        return pygame.draw.rect(
+            screen, white, [xy_snake[-1][0], xy_snake[-1][1], 10, 10]
+        )
 
 
 def message(txt, cor):
@@ -59,13 +67,16 @@ def replay():
 
             # Final score
             screen.fill(black)
-            message(f"{len(snake_list)} points! P - Play again / E - Exit", red)
+            message(
+                f"{len(snake_list)} points! P - Play again / E - Exit", red
+            )
             pygame.display.update()
 
             # Checking permanence
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.exit()
+                    pygame.quit()
+                    sys.exit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_e:
                         game_over = True
@@ -92,7 +103,7 @@ def replay():
                     speed_x = 10
                     speed_y = 0
 
-        # Borders
+        # Borders: atravessar a parede leva ao lado oposto
         if pos_x + 10 > width:
             pos_x = 0
         if pos_x < 0:
@@ -108,7 +119,9 @@ def replay():
         screen.fill(black)
 
         # Apple spawner
-        apple = pygame.draw.rect(screen, red, [pos_x_apple, pos_y_apple, 10, 10])
+        apple = pygame.draw.rect(
+            screen, red, [pos_x_apple, pos_y_apple, 10, 10]
+        )
 
         # Snake builder
         snake_head = [pos_x, pos_y]
@@ -126,7 +139,7 @@ def replay():
         score(snake_len - 1)
         pygame.display.update()
 
-        # Snake body and velocity increase
+        # Comeu a maçã: cresce, sorteia nova maçã fora do corpo e acelera
         if snake_builder(snake_list, True).colliderect(apple):
             snake_len += 1
             collision = True
@@ -146,4 +159,5 @@ def replay():
     pygame.quit()
 
 
-replay()
+if __name__ == '__main__':
+    replay()

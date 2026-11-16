@@ -1,3 +1,7 @@
+# pygame-studies
+
+> 🇧🇷 [Português](#o-que-você-encontrará-neste-repositório) · 🇺🇸 [English](#what-will-you-find-in-this-repository)
+
 ## O que você encontrará neste repositório?
 
 <p>
@@ -14,6 +18,30 @@ O material utilizado foi, em sua grande maioria, a própria <a href="https://www
 ferramenta, fora perguntas e respostas do StackOverflow.
 </p>
 
+Feito em **maio de 2021**.
+
+### Como jogar
+
+```bash
+git clone https://github.com/tofolo17/pygame-studies.git
+cd pygame-studies
+pip install -r requirements.txt
+
+python "01. Snake Game.py"
+python "02. Pong.py"
+```
+
+| Jogo  | Controles |
+|-------|-----------|
+| Snake | Setas para mover; no fim, `P` joga de novo e `E` sai. Atravessar a parede leva ao lado oposto. |
+| Pong  | Escolha o modo no menu com o mouse; `Espaço` lança a bola. Jogador da direita: setas ↑ ↓. No multiplayer, o da esquerda usa `W` e `S`. Vence quem fizer 5 pontos. |
+
+### Licença
+
+[MIT](LICENSE)
+
+---
+
 ## What will you find in this repository?
 
 <p>
@@ -29,3 +57,25 @@ are:
 The content used, in its majority, was the own <a href="https://www.pygame.org/docs/">documentation</a> of the tool,
 besides Q&A on StackOverflow.
 </p>
+
+Built in **May 2021**.
+
+### How to play
+
+```bash
+git clone https://github.com/tofolo17/pygame-studies.git
+cd pygame-studies
+pip install -r requirements.txt
+
+python "01. Snake Game.py"
+python "02. Pong.py"
+```
+
+| Game  | Controls |
+|-------|----------|
+| Snake | Arrow keys to move; at the end, `P` plays again and `E` exits. Crossing a wall wraps to the opposite side. |
+| Pong  | Pick the mode in the menu with the mouse; `Space` serves the ball. Right player: ↑ ↓ arrows. In multiplayer, the left player uses `W` and `S`. First to 5 points wins. |
+
+### License
+
+[MIT](LICENSE)
